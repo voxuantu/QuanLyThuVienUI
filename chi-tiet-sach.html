@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap 5 Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3f2a30504f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/notifi.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header">
+                <nav class="navbar navbar-expand-sm ">
+                    <div class="container-fluid">
+                        <!-- Links -->
+                        <div class="col-lg-9 col-md-9">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <img src="icon/home.png" />
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Giới thiệu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Liên hệ</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="header_right">
+                                <i class="fa-solid fa-bell" onclick="toggleNotify()"></i>
+                                <i class="fa-solid fa-circle-user"></i>
+                                <div class="notifi-box" id="notifi-box-id">
+                                    <h2>Thông báo <span>7</span></h2>
+                                    <div class="notifi-item">
+                                        <img src="/icon/avatar.png" alt="avatar">
+                                        <div>
+                                            <h5>Mượn sách</h5>
+                                            <p>Yêu cầu mượn sách đã được chấp nhận</p>
+                                        </div>
+                                    </div>
+                                    <div class="notifi-item">
+                                        <img src="/icon/avatar.png" alt="avatar">
+                                        <div>
+                                            <h4>Mượn sách</h4>
+                                            <p>Yêu cầu mượn sách đã được chấp nhận</p>
+                                        </div>
+                                    </div>
+                                    <div class="notifi-item">
+                                        <img src="/icon/avatar.png" alt="avatar">
+                                        <div>
+                                            <h4>Mượn sách</h4>
+                                            <p>Yêu cầu mượn sách đã được chấp nhận</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <a>Đăng nhập</a>
+                <a>Đăng ký</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- BODY -->
+    <div class="container">
+        <div class="duong-dan-muc">
+            <a href="/index.html">Trang chủ</a>
+            <i class="fa-solid fa-angle-right"></i>
+            <a href="#">Chi tiết sách</a>
+        </div>
+        <div class="timkiem">
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="/Book image/BupBeRaggedyAnn.jpg" alt="BupBeRaggedyAnn">
+                </div>
+                <div class="col-sm-8">
+                    <h4>Búp bê Rangged Ann</h4>
+                    <h6>Nhà cung cấp : <span>Đinh Tị</span></h6>
+                    <h6>Tác giả : <span>Johnny Gruelle</span></h6>
+                    <h6>Giới thiệu về sách :</h6>
+                    <div class="book-introduction">
+                        <p>Búp bê Raggedy Ann là một tựa sách kinh điển cũng xưa như chính tuổi đời của cô nàng búp bê vải
+                            Raggedy thân thuộc với biết bao bạn nhỏ khắp nơi trên toàn thế giới. Những chuyến phiêu lưu đầy
+                            mộng
+                            mơ nhưng cũng không kém phần tinh nghịch của các cô cậu búp bê, mà đứng đầu là cô nàng Raggedy
+                            Ann,
+                            đã đem đến cho độc giả những giây phút thư giãn, nhẹ nhàng; truyền tải những thông điệp ý nghĩa
+                            về
+                            thời thơ ấu, về tình bạn, tình yêu thương con người.</p>
+                        <p>Búp bê Raggedy Ann là một tựa sách kinh điển cũng xưa như chính tuổi đời của cô nàng búp bê vải
+                            Raggedy thân thuộc với biết bao bạn nhỏ khắp nơi trên toàn thế giới. Những chuyến phiêu lưu đầy
+                            mộng
+                            mơ nhưng cũng không kém phần tinh nghịch của các cô cậu búp bê, mà đứng đầu là cô nàng Raggedy
+                            Ann,
+                            đã đem đến cho độc giả những giây phút thư giãn, nhẹ nhàng; truyền tải những thông điệp ý nghĩa
+                            về
+                            thời thơ ấu, về tình bạn, tình yêu thương con người.</p>
+                    </div>
+                    <button type="button" class="btn btn-primary">Mượn sách</button>
+                </div>
+            </div>
+            <!-- Tab giới thiệu và bình luận -->
+            <!-- <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#introduction">Giới thiệu về sách</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#comment-page">Bình Luận</a>
+                </li>
+            </ul> -->
+
+            <!-- Tab panes -->
+            <!-- <div class="tab-content">
+                <div class="tab-pane container active" id="introduction">
+                    <p>Búp bê Raggedy Ann là một tựa sách kinh điển cũng xưa như chính tuổi đời của cô nàng búp bê vải
+                        Raggedy thân thuộc với biết bao bạn nhỏ khắp nơi trên toàn thế giới. Những chuyến phiêu lưu đầy
+                        mộng
+                        mơ nhưng cũng không kém phần tinh nghịch của các cô cậu búp bê, mà đứng đầu là cô nàng Raggedy
+                        Ann,
+                        đã đem đến cho độc giả những giây phút thư giãn, nhẹ nhàng; truyền tải những thông điệp ý nghĩa
+                        về
+                        thời thơ ấu, về tình bạn, tình yêu thương con người.</p>
+                </div>
+                <div class="tab-pane container fade" id="comment-page">
+                    <p>Búp bê Raggedy Ann là một tựa sách kinh điển cũng xưa như chính tuổi đời của cô nàng búp bê vải
+                        Raggedy thân thuộc với biết bao bạn nhỏ khắp nơi trên toàn thế giới. Những chuyến phiêu lưu đầy
+                        mộng
+                        mơ nhưng cũng không kém phần tinh nghịch của các cô cậu búp bê, mà đứng đầu là cô nàng Raggedy
+                        Ann,
+                        đã đem đến cho độc giả những giây phút thư giãn, nhẹ nhàng; truyền tải những thông điệp ý nghĩa
+                        về
+                        thời thơ ấu, về tình bạn, tình yêu thương con người.</p>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- Gợi ý sách cùng thể loại -->
+        <div class="row">
+            <h4 style="padding-bottom: 10px;">Những cuốn sách cùng thể loại</h4>
+            <div class="card-container col-sm-2">
+                <div class="card-base">
+                    <div class="img-card">
+                        <img class="img-fluid img-card" src="/Book image/BupBeRaggedyAnn.jpg">
+                    </div>
+                    <div class="btn-base">
+                        <p class="text-base">Mượn sách</p>
+                    </div>
+                    <div class="text-content">
+                        <div><i class="fa-solid fa-book"></i> Búp bê của Rangged Ann</div>
+                        <div><i class="fa-solid fa-user"></i> Nguyễn Nhật Ánh</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container col-sm-2">
+                <div class="card-base">
+                    <img class="img-fluid img-card" src="/Book image/ChoDenMauGiaoThiDaMuon.jpg">
+                    <div class="btn-base">
+                        <p class="text-base">Mượn sách</p>
+                    </div>
+                    <div class="text-content">
+                        <div><i class="fa-solid fa-book"></i> Búp bê của Rangged Ann</div>
+                        <div><i class="fa-solid fa-user"></i> Nguyễn Nhật Ánh</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container col-sm-2">
+                <div class="card-base">
+                    <img class="img-fluid img-card" src="/Book image/ChoToiXinMotVeDiTuoiTho.jpg">
+                    <div class="btn-base">
+                        <p class="text-base">Mượn sách</p>
+                    </div>
+                    <div class="text-content">
+                        <div><i class="fa-solid fa-book"></i> Cho tôi xin một vé đi tuổi thơ</div>
+                        <div><i class="fa-solid fa-user"></i> Nguyễn Nhật Ánh</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container col-sm-2">
+                <div class="card-base">
+                    <img class="img-fluid img-card" src="/Book image/ConChimXanhBiecBayVe.jpg">
+                    <div class="btn-base">
+                        <p class="text-base">Mượn sách</p>
+                    </div>
+                    <div class="text-content">
+                        <div><i class="fa-solid fa-book"></i> Con chim xanh biếc bay về</div>
+                        <div><i class="fa-solid fa-user"></i> Nguyễn Nhật Ánh</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container col-sm-2">
+                <div class="card-base">
+                    <img class="img-fluid img-card" src="/Book image/VuiVeKhongQuauNha.jpg">
+                    <div class="btn-base">
+                        <p class="text-base">Mượn sách</p>
+                    </div>
+                    <div class="text-content">
+                        <div><i class="fa-solid fa-book"></i> Cho tôi xin một vé đi tuổi thơ</div>
+                        <div><i class="fa-solid fa-user"></i> Nguyễn Nhật Ánh</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container col-sm-2">
+                <div class="card-base">
+                    <img class="img-fluid img-card" src="/Book image/NguoiBaTaiGioiVungSaga.jpg">
+                    <div class="btn-base">
+                        <p class="text-base">Mượn sách</p>
+                    </div>
+                    <div class="text-content">
+                        <div><i class="fa-solid fa-book"></i> Con chim xanh biếc bay về</div>
+                        <div><i class="fa-solid fa-user"></i> Nguyễn Nhật Ánh</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer container">
+        <div>
+            @Copyright by Vo Minh Tuan & Vo Xuan Tu
+        </div>
+    </footer>
+</body>
+
+</html>
