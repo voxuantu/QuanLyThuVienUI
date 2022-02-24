@@ -319,7 +319,6 @@
 }
 /* css cho user-box */
 .user-box{
-    visibility: hidden;
     top: 45px;
     right: 0px;
     position: absolute;
@@ -341,6 +340,10 @@
 .user-box-item:hover{
     cursor: pointer;
 }
-.showElement{
-    visibility: visible;
+.hide-element{
+    display: none;
+}
+/* css trang giới thiệu */
+.timkiem h3{
+    text-align: center;
 }
