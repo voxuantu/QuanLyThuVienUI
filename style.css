@@ -17,7 +17,7 @@
     color: white;
 }
 .header_right i{
-    margin-left: 10px;
+    margin-left: 20px;
     cursor: pointer;
     font-size: 25px;
 }
@@ -180,9 +180,12 @@
     z-index: 1;
     visibility: hidden;
     width: 350px;
+    max-height: 300px;
+    overflow-y: auto;
     position: absolute;
-    top: 56px;
-    right: 35px;
+    top: 43px;
+    right: 112px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .notifi-box h2{
@@ -198,7 +201,6 @@
     display: flex;
     border-bottom: 1px solid #eee;
     padding: 15px 5px;
-    /* margin-bottom: 15px; */
     height: 100px;
     cursor: pointer;
 }
@@ -218,6 +220,12 @@
 }
 .notifi-item p{
     color: black;
+}
+.notifi-counter{
+    font-size: 10px !important;
+    position: absolute;
+    margin-left: -10px;
+    margin-top: -5px;
 }
 /* css đường dẫn thư mục */
 .duong-dan-muc{
@@ -283,4 +291,56 @@
 }
 .lich-su .table  tbody i{
     cursor: pointer;
+    max-height: 300px;
+}
+
+/* css trang giỏ sách */
+.table img{
+    width: 100px;
+}
+.timkiem h4{
+    text-align: center;
+}
+.delete-book{
+    font-size: 20px;
+    cursor: pointer;
+}
+.delete-book:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.customer-info{
+    border-radius: 10px; 
+    padding: 20px;
+    height: fit-content;
+}
+.empty-bag{
+    width: 250px;
+    margin-bottom: 20px;
+}
+/* css cho user-box */
+.user-box{
+    visibility: hidden;
+    top: 45px;
+    right: 0px;
+    position: absolute;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.user-box-item{
+    color: black;
+    text-align: left;
+    padding: 5px 10px 5px 10px;
+    color: black;
+}
+.user-box-item i{
+    margin-left: 0;
+}
+
+.user-box-item:hover{
+    cursor: pointer;
+}
+.showElement{
+    visibility: visible;
 }
