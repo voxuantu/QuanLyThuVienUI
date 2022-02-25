@@ -161,10 +161,14 @@
 /* footer css */
 .footer{
     margin-top: 20px;
-    background-color: #31a2fa;
-    padding: 20px;
-    color: white;
+    color: white; 
     text-align: center;
+}
+.footer .container p {
+    background-color: #31a2fa;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 0px;
 }
 
 /* notifi-box */
@@ -218,8 +222,65 @@
 /* css đường dẫn thư mục */
 .duong-dan-muc{
     font-size: 16px;
-    padding-top: 10px;
+    padding: 10px 10px 0px 10px;
 }
+.duong-dan-muc a {
+    text-decoration: none;
+    color: #999;
+}
+.duong-dan-muc i{
+    color: #999;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* css chi tiết sách */
 .book-introduction{
-    max-height: 300px;
+    height: 200px !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+.col-sm-8 .muonsach{
+    border: 2px solid #31a2fa;
+    background-color: #31a2fa;
+    color: white;
+    padding: 10px 30px ;
+}
+.col-sm-8 .muonsach:hover{
+    background-color: white;
+    color: #31a2fa;
+    border: 2px solid #31a2fa;
+}
+/* css Trang cá nhân */
+.timkiem .col-sm-8 .title_canhan{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+.timkiem .col-sm-8 .row .mb-3 a{
+    cursor: pointer;
+}
+#nuteditThongTin{
+    visibility: hidden;
+    text-align: right;
+}
+.display-edit-button{
+    visibility: visible !important;
+}
+.anhDaiDien{
+    max-width: 192px;
+    max-height: 192px;
+}
+.thong-tin-the h5{
+    text-align: center;
+}
+.thong-tin-the p{
+    text-align: center;
+    width: 50%;
+}
+.lich-su h5{
+    text-align: center;
+}
+.lich-su .table  tbody i{
+    cursor: pointer;
 }

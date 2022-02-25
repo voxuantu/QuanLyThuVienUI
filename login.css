@@ -1,0 +1,61 @@
+.contanier_login{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.wrap_login {
+    width: 500px;
+    background: #fff;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 3px 20px 0px rgba(0, 0 ,0 ,0.2);
+}
+.wrap_login h5 {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 39px;
+    background-color: #31a2fa;
+    border-radius: 20px 20px 0 0;
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.login_form{
+    padding: 0 55px;
+}
+.login_form input {
+    margin-bottom: 16px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.login_form button {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #31a2fa;
+    border: 2px solid #31a2fa;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.login_form button:hover{
+    background-color: white;
+    color: #31a2fa;
+    border: 2px solid #31a2fa;
+}
+.login_form a {
+    text-decoration: none;
+    color: #31a2fa;
+}
+.text_right{
+    text-align: right;
+    margin-bottom: 16px;
+}
+.body{
+    background-image: url("Banner/nenthuvien.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
