@@ -17,7 +17,7 @@
     color: white;
 }
 .header_right i{
-    margin-left: 10px;
+    margin-left: 20px;
     cursor: pointer;
     font-size: 25px;
 }
@@ -176,9 +176,12 @@
     z-index: 1;
     visibility: hidden;
     width: 350px;
+    max-height: 300px;
+    overflow-y: auto;
     position: absolute;
     top: 56px;
-    right: 35px;
+    right: 100px;
+    border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .notifi-box h2{
@@ -214,6 +217,12 @@
 }
 .notifi-item p{
     color: black;
+}
+.notifi-counter{
+    font-size: 10px !important;
+    position: absolute;
+    margin-left: -10px;
+    margin-top: -5px;
 }
 /* css đường dẫn thư mục */
 .duong-dan-muc{
