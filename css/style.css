@@ -293,7 +293,24 @@
     cursor: pointer;
     max-height: 300px;
 }
-
+.lich-su mark {
+    border-radius: 5px;
+}
+.dang-xu-ly{
+    border: 1px solid rgb(250, 146, 146);
+    background-color: rgb(247, 184, 184);
+}
+.dang-muon{
+    border: 1px solid #ffee00;
+    background-color: #f5f0a8;
+}
+.da-tra{
+    border: 1px solid #00ff37;
+    background-color: #aff7b2;
+}
+.hide-element{
+    display: none !important;
+}
 /* css trang giỏ sách */
 .table img{
     width: 100px;
