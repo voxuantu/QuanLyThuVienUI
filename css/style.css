@@ -293,20 +293,27 @@
     cursor: pointer;
     max-height: 300px;
 }
-.lich-su mark {
-    border-radius: 5px;
-}
+
 .dang-xu-ly{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
     border: 1px solid rgb(250, 146, 146);
     background-color: rgb(247, 184, 184);
 }
 .dang-muon{
+    padding-left: 5px;
+    padding-right: 5px;
     border: 1px solid #ffee00;
     background-color: #f5f0a8;
+    border-radius: 5px;
 }
 .da-tra{
+    padding-left: 5px;
+    padding-right: 5px;
     border: 1px solid #00ff37;
     background-color: #aff7b2;
+    border-radius: 5px;
 }
 .hide-element{
     display: none !important;
@@ -363,6 +370,19 @@
 .timkiem h3{
     text-align: center;
 }
+
+/* CSS TRANG YÊU CẦU MƯỢN SÁCH */
+i.fa-regular{
+   font-size: 30px; 
+   cursor: pointer;
+}
+i.fa-circle-check{
+    color: #04d85d !important;
+}
+i.fa-circle-xmark{
+    color: red !important;
+}
+
 /* css trang quản lý sách */
 .nut-xac-nhan-them-moi{
     text-align: right;
@@ -383,3 +403,4 @@ html{
 .nut-them-moi{
     text-decoration: none;
 }
+

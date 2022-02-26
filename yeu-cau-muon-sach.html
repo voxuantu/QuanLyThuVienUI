@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Liên hệ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link href="/css/cssButton.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- script -->
+    <script src="https://kit.fontawesome.com/3f2a30504f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/introduction.js"></script>
+    <script src="/js/user.js"></script>
+    <script src="/js/notifi.js"></script>
+    <script src="/js/YeuCauMuonSach.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header">
+                <nav class="navbar navbar-expand-sm ">
+                    <div class="container-fluid">
+                        <!-- Links -->
+                        <div class="col-lg-9 col-md-9">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <img src="icon/home.png" />
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Giới thiệu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Liên hệ</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="header_right">
+                                <i class="fa-solid fa-bell" onclick="toggleNotify()">
+                                    <span class="badge bg-danger text-wrap notifi-counter">7</span>
+                                </i>
+                                <i class="fa-solid fa-basket-shopping">
+                                    <span class="badge bg-danger text-wrap notifi-counter">7</span>
+                                </i>
+                                <i class="fa-solid fa-circle-user" onclick="toggleUserBox()"></i>
+                                <div class="notifi-box" id="notifi-box-id">
+                                    <h2>Thông báo <span>7</span></h2>
+                                    <div class="notifi-item">
+                                        <img src="/icon/avatar.png" alt="avatar">
+                                        <div>
+                                            <h5>Mượn sách</h5>
+                                            <p>Yêu cầu mượn sách đã được chấp nhận</p>
+                                        </div>
+                                    </div>
+                                    <div class="notifi-item">
+                                        <img src="/icon/avatar.png" alt="avatar">
+                                        <div>
+                                            <h4>Mượn sách</h4>
+                                            <p>Yêu cầu mượn sách đã được chấp nhận</p>
+                                        </div>
+                                    </div>
+                                    <div class="notifi-item">
+                                        <img src="/icon/avatar.png" alt="avatar">
+                                        <div>
+                                            <h4>Mượn sách</h4>
+                                            <p>Yêu cầu mượn sách đã được chấp nhận</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-box hide-element" id="userBox">
+                                    <div class="user-box-item" style="border-bottom: 1px solid #eee ;">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <span>Trang cá nhân</span>
+                                    </div>
+                                    <div class="user-box-item">
+                                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                        <span>Thoát</span>
+                                    </div>
+                                </div>
+                                <!-- <a>Đăng nhập</a>
+                <a>Đăng ký</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- BODY -->
+    <div class="container">
+        <div class="duong-dan-muc">
+            <a href="/index.html">Trang chủ</a>
+            <i class="fa-solid fa-angle-right"></i>
+            <a href="/lien-he.html">Yêu cầu mượn sách</a>
+        </div>
+        <div class="timkiem">
+            <div class="row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="title">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h5>Tìm kiếm phiếu mượn</h5>
+                </div>
+                <div class="search_box row">
+                    <div class="col-10">
+                        <div class="input-group mb-3">
+                            <select style="width: 18%;">
+                                <option>Tên người mượn</option>
+                                <option>Mã mượn sách</option>
+                            </select>
+                            <input style="width: 82%;" type="text">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button class="btnTimKiem">Tìm kiếm</button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã mượn sách</th>
+                            <th>Tên người mượn</th>
+                            <th>Ngày mượn</th>
+                            <th>Xem sách mượn</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">MS005</th>
+                            <td>Nguyễn Văn B</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><button type="button" class="nutbam" onclick="OpenModal()">Xem sách mượn</button></td>
+                            <td>
+                                <i class="fa-regular fa-circle-check"></i>
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS004</th>
+                            <td>Nguyễn Văn A</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><button type="button" class="nutbam" onclick="OpenModal()">Xem sách mượn</button></td>
+                            <td>
+                                <i class="fa-regular fa-circle-check"></i>
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS003</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><button type="button" class="nutbam" onclick="OpenModal()">Xem sách mượn</button></td>
+                            <td>
+                                <i class="fa-regular fa-circle-check"></i>
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS002</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>22/2/2022 10:15:20 AM</td>
+                            <td><button type="button" class="nutbam">Xem sách mượn</button></td>
+                            <td>
+                                <i class="fa-regular fa-circle-check"></i>
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS001</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>20/2/2022 10:15:20 AM</td>
+                            <td><button type="button" class="nutbam">Xem sách mượn</button></td>
+                            <td>
+                                <i class="fa-regular fa-circle-check"></i>
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                  </ul>
+            </div>
+        </div>
+        <div class="timkiem">
+            <div class="row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="title">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h5>Tìm kiếm phiếu trả sách</h5>
+                </div>
+                <div class="search_box row">
+                    <div class="col-10">
+                        <div class="input-group mb-3">
+                            <select style="width: 18%;">
+                                <option>Tên người mượn</option>
+                                <option>Mã mượn sách</option>
+                            </select>
+                            <input style="width: 82%;" type="text">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button class="btnTimKiem">Tìm kiếm</button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã mượn sách</th>
+                            <th>Tên người mượn</th>
+                            <th>Ngày mượn</th>
+                            <th>Hạn trả</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">MS001</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>20/2/2022 10:15:20 AM</td>
+                            <td><mark class="dang-xu-ly">26/2/2022</mark></td>
+                            <td><button type="button" class="nutbam" onclick="OpenModelTraSach()">Trả sách</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS002</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>22/2/2022 10:15:20 AM</td>
+                            <td><mark class="da-tra">28/2/2022</mark></td>
+                            <td><button type="button" class="nutbam">Trả sách</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS003</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><mark class="da-tra">2/3/2022</mark></td>
+                            <td><button type="button" class="nutbam">Trả sách</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS004</th>
+                            <td>Nguyễn Văn A</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><mark class="da-tra">2/3/2022</mark></td>
+                            <td><button type="button" class="nutbam">Trả sách</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS005</th>
+                            <td>Nguyễn Văn B</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><mark class="da-tra">2/3/2022</mark></td>
+                            <td><button type="button" class="nutbam">Trả sách</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                  </ul>
+            </div>
+        </div>
+        <div class="timkiem">
+            <div class="row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="title">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h5>Tìm kiếm phiếu trả sách</h5>
+                </div>
+                <div class="search_box row">
+                    <div class="col-10">
+                        <div class="input-group mb-3">
+                            <select style="width: 18%;">
+                                <option>Tên người mượn</option>
+                                <option>Mã mượn sách</option>
+                            </select>
+                            <input style="width: 82%;" type="text">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button class="btnTimKiem">Tìm kiếm</button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã mượn sách</th>
+                            <th>Tên người mượn</th>
+                            <th>Ngày mượn</th>
+                            <th>Trạng thái trả</th>
+                            <th>Số sách trả</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">MS001</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>20/2/2022 10:15:20 AM</td>
+                            <td><mark class="da-tra">Đúng hẹn</mark></td>
+                            <td><mark class="da-tra">3/3</mark></td>
+                            <td><button type="button" class="nutbam" onclick="OpenModelTraSach()">Xem chi tiết</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS002</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>22/2/2022 10:15:20 AM</td>
+                            <td><mark class="dang-xu-ly">Trễ hẹn</mark></td>
+                            <td><mark class="da-tra">3/3</mark></td>
+                            <td><button type="button" class="nutbam">Xem chi tiết</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS003</th>
+                            <td>Võ Xuân Tú</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><mark class="da-tra">Đúng hẹn</mark></td>
+                            <td><mark class="dang-xu-ly">2/3</mark></td>
+                            <td><button type="button" class="nutbam">Xem chi tiết</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS004</th>
+                            <td>Nguyễn Văn A</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><mark class="dang-xu-ly">Trễ hẹn</mark></td>
+                            <td><mark class="dang-xu-ly">2/3</mark></td>
+                            <td><button type="button" class="nutbam">Xem chi tiết</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MS005</th>
+                            <td>Nguyễn Văn B</td>
+                            <td>24/2/2022 10:15:20 AM</td>
+                            <td><mark class="da-tra">Đúng hẹn</mark></td>
+                            <td><mark class="da-tra">3/3</mark></td>
+                            <td><button type="button" class="nutbam">Xem chi tiết</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                  </ul>
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sách mượn</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ảnh bìa</th>
+                                    <th scope="col">Tên sách</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">1</td>
+                                    <td><img src="/Book image/BupBeRaggedyAnn.jpg" alt="BupBeRaggedyAnn"
+                                            class="img-fluid"></td>
+                                    <td>Búp bê Rangged An</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">2</td>
+                                    <td><img src="/Book image/ChoDenMauGiaoThiDaMuon.jpg" alt="ChoDenMauGiaoThiDaMuon"
+                                            class="img-fluid"></td>
+                                    <td>Cho đến mẫu giáo thì đã muônn</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">3</td>
+                                    <td><img src="/Book image/ChoToiXinMotVeDiTuoiTho.jpg" alt="ChoToiXinMotVeDiTuoiTho"
+                                            class="img-fluid"></td>
+                                    <td>Cho tôi xin một vé đi tuổi thơ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modalTraSach" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sách trả</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><input type="checkbox" onclick="CheckAllBook()"></th>
+                                    <th scope="col">Ảnh bìa</th>
+                                    <th scope="col">Tên sách</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row"><input type="checkbox"></td>
+                                    <td><img src="/Book image/BupBeRaggedyAnn.jpg" alt="BupBeRaggedyAnn"
+                                            class="img-fluid"></td>
+                                    <td>Búp bê Rangged An</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"><input type="checkbox"></td>
+                                    <td><img src="/Book image/ChoDenMauGiaoThiDaMuon.jpg" alt="ChoDenMauGiaoThiDaMuon"
+                                            class="img-fluid"></td>
+                                    <td>Cho đến mẫu giáo thì đã muônn</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"><input type="checkbox"></td>
+                                    <td><img src="/Book image/ChoToiXinMotVeDiTuoiTho.jpg" alt="ChoToiXinMotVeDiTuoiTho"
+                                            class="img-fluid"></td>
+                                    <td>Cho tôi xin một vé đi tuổi thơ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="nutbam" data-bs-dismiss="modal">Xác nhận trả sách</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>@Copyright by Vo Minh Tuan & Vo Xuan Tu</p>
+        </div>
+    </footer>
+</body>
+
+</html>
