@@ -54,7 +54,7 @@
     margin-bottom: 16px;
 }
 .body{
-    background-image: url("Banner/nenthuvien.jpg");
+    background-image: url("/Banner/nenthuvien.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

@@ -3,10 +3,10 @@ var show = false;
 function toggleUserBox(){
     var userbox = document.getElementById("userBox");
     if(show){
-        userbox.classList.remove("showElement");
+        userbox.classList.add("hide-element");
         show = false;
     }else{
-        userbox.classList.add("showElement");
+        userbox.classList.remove("hide-element");
         show = true;
     }
 }
