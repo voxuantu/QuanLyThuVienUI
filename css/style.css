@@ -42,12 +42,12 @@
 }
 .timkiem .search_box input{
     padding: 5px;
-    border: 1px solid #31a2fa;
+    border: 1.5px solid #31a2fa;
     border-radius: 5px;
     width: 85%;
 }
 .timkiem .search_box select {
-    border: 1px solid #31a2fa;
+    border: 1.5px solid #31a2fa;
     border-radius: 5px 0 0 5px;
     padding: 5px;
     width: 15%;
@@ -325,11 +325,14 @@
 .timkiem h4{
     text-align: center;
 }
-.delete-book{
+.action-book{
     font-size: 20px;
     cursor: pointer;
 }
-.delete-book:hover{
+.xoa{
+    color:rgb(250, 53, 53) !important;
+}
+.action-book:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .customer-info{
@@ -367,6 +370,7 @@
 .timkiem h3{
     text-align: center;
 }
+
 /* CSS TRANG YÊU CẦU MƯỢN SÁCH */
 i.fa-regular{
    font-size: 30px; 
@@ -378,3 +382,25 @@ i.fa-circle-check{
 i.fa-circle-xmark{
     color: red !important;
 }
+
+/* css trang quản lý sách */
+.nut-xac-nhan-them-moi{
+    text-align: right;
+}
+#mota{
+    height: 100px;
+}
+.title_themmoi{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: large;
+    margin-bottom: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+.nut-them-moi{
+    text-decoration: none;
+}
+
