@@ -36,11 +36,27 @@ function toggleEdit() {
 function OpenModal(mamuonsach, matrangthai) {
     $(document).ready(
         function () {
-            if(matrangthai != 3){
+            if(matrangthai != 2){
 
-                $('.modal .nutbam').addClass('hide-element');
+                $('.modal-chi-tiet-muon-sach .nutbam').addClass('hide-element');
+            } else {
+                $('.modal-chi-tiet-muon-sach .nutbam').removeClass('hide-element');
             }
-            $('.modal').modal('show');
+            $('.modal-chi-tiet-muon-sach').modal('show');
+        }
+    )
+}
+function OpenModalChangePass() {
+    $(document).ready(
+        function () {
+            $('.modal-change-password').modal('show');
+        }
+    )
+}
+function OpenModalTraSach() {
+    $(document).ready(
+        function () {
+            $('.modal-tra-sach').modal('show');
         }
     )
 }

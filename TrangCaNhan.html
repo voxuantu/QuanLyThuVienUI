@@ -5,15 +5,21 @@
     <title>Bootstrap 5 Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/css/style.css" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/3f2a30504f.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link href="/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/cssButton.css" rel="stylesheet">
+
+    <!-- script -->
+    <script src="/js/showToolTip.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/3f2a30504f.js" crossorigin="anonymous"></script>
     <script src="/js/notifi.js"></script>
     <script src="/js/TrangCaNhan.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="/css/cssButton.css" rel="stylesheet">
+
 
 </head>
 
@@ -98,22 +104,30 @@
                 <div class="col-sm-8">
                     <div class="row">
                         <div class="position-relative mb-3">
-                            <p class="title_canhan">Thông tin cá nhân</p>
-                            <a onclick="toggleEdit()"
-                                class="position-absolute top-50 end-0 translate-middle-y btnEdit"><i
-                                    class="fa-solid fa-user-pen"></i></a>
+                            <h5 class="title_canhan">Thông tin cá nhân</h5>
+                            <div class="position-absolute top-50 end-0 translate-middle-y">
+                                <a onclick="toggleEdit()" class="btnEdit"><i class="fa-solid fa-user-pen"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        title="Chỉnh sửa thông tin"></i></a>
+                                <i onclick="OpenModalChangePass()" class="fa-solid fa-key" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Đổi mật khẩu"></i>
+                            </div>
                         </div>
                         <div class="thongtincanhan">
                             <form>
-                                <div class="row mb-3">
+                                <div class="row mb-2">
                                     <label class="col-sm-2 col-form-label">Họ và tên</label>
                                     <div class="col-sm-10">
-                                        <label id="lbHoTen" class="col-form-label tieude">Nguyễn Văn A</label>
-                                        <input type="text" class="form-control hide-element" id="hovaten"
-                                            placeholder="Nguyễn Văn A">
+                                        <label id="lbHoTen" class="col-form-label">Nguyễn Văn A</label>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-2">
+                                    <label class="col-sm-2 col-form-label">Năm sinh</label>
+                                    <div class="col-sm-10">
+                                        <label id="lbNamSinh" class="col-form-label">2001</label>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
                                     <label class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
                                         <label id="lbEmail" class="col-form-label tieude">abcd@gmail.com</label>
@@ -121,7 +135,7 @@
                                             placeholder="abcd@gmail.com">
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-2">
                                     <label class="col-sm-2 col-form-label">Số điện thoại</label>
                                     <div class="col-sm-10">
                                         <label id="lbSdt" class="col-form-label tieude">0987654321</label>
@@ -129,7 +143,7 @@
                                             pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="0987654321">
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-2">
                                     <label class="col-sm-2 col-form-label">Địa chỉ</label>
                                     <div class="col-sm-10">
                                         <label id="lbDiaChi" class="col-form-label tieude">Khu phố 6, Linh Trung, Thủ
@@ -160,6 +174,10 @@
                         <p>Hạn thẻ</p>
                         <p>20/3/2022</p>
                     </div>
+                    <div class="gia-han-the">
+                        <button class="nutbam">Gia hạn thẻ</button>
+                    </div>
+
                 </div>
             </div>
             <div class="col-sm-8">
@@ -170,6 +188,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Ngày mượn</th>
+                                <th>Hạn trả</th>
                                 <th>Số sách mượn</th>
                                 <th>Tình trạng</th>
                                 <th>Xem</th>
@@ -179,30 +198,38 @@
                             <tr>
                                 <td>1</td>
                                 <td>22/1/2022</td>
+                                <td>4/2/2022</td>
                                 <td>1</td>
                                 <td><mark class="dang-xu-ly">Đang xử lý</mark></td>
-                                <td><i class="fa-solid fa-eye" onclick="OpenModal(12,1)"></i></td>
+                                <td><i class="fa-solid fa-eye" onclick="OpenModal(12,1)" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Xem chi tiết"></i></td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>14/2/2022</td>
+                                <td><mark class="dang-xu-ly">4/2/2022</mark></td>
                                 <td>1</td>
                                 <td><mark class="dang-muon">Đang mượn</mark></td>
-                                <td><i class="fa-solid fa-eye" onclick="OpenModal(12,2)"></i></td>
+                                <td><i class="fa-solid fa-eye" onclick="OpenModal(12,2)" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Xem chi tiết"></i></td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>21/2/2022</td>
+                                <td>4/2/2022</td>
                                 <td>1</td>
                                 <td><mark class="da-tra">Đã trả</mark></td>
-                                <td><i class="fa-solid fa-eye" onclick="OpenModal(12,3)"></i></td>
+                                <td><i class="fa-solid fa-eye" onclick="OpenModalTraSach()" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Xem chi tiết"></i></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <div class="modal fade" tabindex="-1">
+
+        <!-- modal sách đang mượn/đang xử lý -->
+        <div class="modal fade modal-chi-tiet-muon-sach" tabindex="-1">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -243,6 +270,118 @@
                     <div class="modal-footer">
                         <button type="button" class="nutbamred" data-bs-dismiss="modal">Đóng</button>
                         <button type="button" class="nutbam" data-bs-dismiss="modal">Gia hạn sách</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal sách đã trả -->
+        <div class="modal fade modal-tra-sach" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable" style="max-width: 1000px !important;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Thông tin trả sách</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Ảnh bìa</th>
+                                            <th scope="col">Tên sách</th>
+                                            <th scope="col">Tình trạng</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td><img src="/Book image/BupBeRaggedyAnn.jpg" alt="BupBeRaggedyAnn"
+                                                    class="img-fluid"></td>
+                                            <td>Búp bê Rangged An</td>
+                                            <td><mark class="da-tra">Đã trả</mark></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td><img src="/Book image/ChoDenMauGiaoThiDaMuon.jpg" alt="ChoDenMauGiaoThiDaMuon"
+                                                    class="img-fluid"></td>
+                                            <td>Cho đến mẫu giáo thì đã muônn</td>
+                                            <td><mark class="da-tra">Đã trả</mark></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</ths>
+                                            <td><img src="/Book image/ChoToiXinMotVeDiTuoiTho.jpg" alt="ChoToiXinMotVeDiTuoiTho"
+                                                    class="img-fluid"></td>
+                                            <td>Cho tôi xin một vé đi tuổi thơ</td>
+                                            <td><mark class="dang-xu-ly">Làm mất</mark></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="thong-tin-tra-sach">
+                                    <p>Ngày mượn sách :</p>
+                                    <p>14/1/2022</p>
+                                </div>
+                                <div class="thong-tin-tra-sach">
+                                    <p>Hạn trả sách :</p>
+                                    <p> 20/1/2022</p>
+                                </div>
+                                <div class="thong-tin-tra-sach">
+                                    <p>Ngày trả sách :</p>
+                                    <p>20/1/2022</p>
+                                </div>
+                                <div class="thong-tin-tra-sach">
+                                    <p>Tình trạng trả :</p>
+                                    <p><mark class="da-tra">Đúng hẹn</mark></p>
+                                </div>
+                                <div class="thong-tin-tra-sach">
+                                    <p>Tiền phạt :</p>
+                                    <p>0 đ</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="nutbamred" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal thay đổi mật khẩu -->
+        <div class="modal modal-change-password fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Đổi mật khẩu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="oldpass" class="form-label">Mật khẩu cũ</label>
+                            <input type="password" class="form-control" id="oldpass" placeholder="Mật khẩu cũ...">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newpass" class="form-label">Mật khẩu mới</label>
+                            <input type="password" class="form-control" id="newpass" placeholder="Mật khẩu mới...">
+                        </div>
+                        <div class="mb-3">
+                            <label for="renewpass" class="form-label">Nhập lại mật khẩu mới</label>
+                            <input type="password" class="form-control" id="renewpass" placeholder="Mật khẩu cũ...">
+                        </div>
+                        <div class="mb-3">
+                            <label for="code" class="form-label">Mã bảo mật</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="code" placeholder="Nhập mã...">
+                                <button class="nutbamgreen">Lấy mã</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="nutbamred" data-bs-dismiss="modal">Hủy</button>
+                        <button type="button" class="nutbam">Thay đổi</button>
                     </div>
                 </div>
             </div>
