@@ -25,3 +25,15 @@
 .nuteditThongTin{
     text-align: right;
 }
+.nutbamgreen{
+    background-color: #2aa72f;
+    color: white;
+    border: 2px solid #2aa72f;
+    padding: 5px 30px;
+    border-radius: 5px;
+}
+.nutbamgreen:hover{
+    background-color: white;
+    color: #2aa72f;
+    border: 2px solid #2aa72f;
+}

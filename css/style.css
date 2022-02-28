@@ -318,6 +318,14 @@
 .hide-element{
     display: none !important;
 }
+.gia-han-the{
+    display: flex;
+    justify-content: center;
+}
+.thong-tin-tra-sach{
+    display: flex;
+    justify-content: space-between;
+}
 /* css trang giỏ sách */
 .table img{
     width: 100px;
@@ -383,8 +391,7 @@ i.fa-circle-xmark{
     color: red !important;
 }
 
-
-/* css trang quản lý sách */
+/* css trang quản lý sách và thể loại */
 .nut-xac-nhan-them-moi{
     text-align: right;
 }
@@ -404,4 +411,16 @@ html{
 .nut-them-moi{
     text-decoration: none;
 }
-
+.search_box_qlsach input {
+    width: 50% !important;
+}
+.them-moi-the-loai{
+    justify-content: space-between;
+}
+/* css Trang quản lý người dùng */
+#title-qlnguoidung{
+    text-align: center;
+}
+.table-nguoidung a{
+    text-decoration: none;
+}

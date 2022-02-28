@@ -87,150 +87,235 @@
     </div>
   </header>
   <!-- BODY -->
-  <div class="container">
-    <div class="timkiem mb-2">
-      <div class="title">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <p>Tìm kiếm sách</p>
-      </div>
-      <div class="search_box row">
-        <div class="col-10">
-          <div class="input-group mb-3">
-            <select>
-              <option>Tên sách</option>
-              <option>Tên tác giả</option>
-            </select>
-            <input type="text">
+  <div class="container" style="min-height: 500px;">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="left_menu timkiem" style="padding: 0 !important;">
+          <div class="theloai">
+            <h5>Quản lý</h5>
+          </div>
+          <div class="dstheloai">
+            <ul>
+              <li onclick="displayArea(1)"><a>Sách</a></li>
+              <li onclick="displayArea(2)"><a>Thể loại</a></li>
+            </ul>
           </div>
         </div>
-        <div class="col-2">
-          <button class="btnTimKiem">Tìm kiếm</button>
-        </div>
       </div>
-    </div>
-    <div class="timkiem">
-      <div class="mb-3">
-        <a href="#themsuasach" onclick="HienFormThemSachs()" class="nutbam nut-them-moi">Thêm sách mới</a>
-      </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Ảnh bìa</th>
-            <th scope="col">Tên sách</th>
-            <th scope="col">Tác giả</th>
-            <th scope="col">Số lượng</th>
-            <th scope="col">Thao tác</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td><img src="/Book image/BupBeRaggedyAnn.jpg" alt="BupBeRaggedyAnn" class="img-fluid"></td>
-            <td>Búp bê Rangged An</td>
-            <td>Nguyễn Nhật Ánh</td>
-            <td>100</td>
-            <td>
-              <i class="fa-solid fa-trash-can action-book xoa"></i>
-              <i class="fa-solid fa-pen-to-square action-book"></i>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td><img src="/Book image/ChoDenMauGiaoThiDaMuon.jpg" alt="ChoDenMauGiaoThiDaMuon" class="img-fluid"></td>
-            <td>Cho đến mẫu giáo thì đã muônn</td>
-            <td>Nguyễn Nhật Ánh</td>
-            <td>100</td>
-            <td>
-              <i class="fa-solid fa-trash-can action-book xoa"></i>
-              <i class="fa-solid fa-pen-to-square action-book"></i>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td><img src="/Book image/ChoToiXinMotVeDiTuoiTho.jpg" alt="ChoToiXinMotVeDiTuoiTho" class="img-fluid"></td>
-            <td>Cho tôi xin một vé đi tuổi thơ</td>
-            <td>Nguyễn Nhật Ánh</td>
-            <td>100</td>
-            <td>
-              <i class="fa-solid fa-trash-can action-book xoa"></i>
-              <a href="#themsuasach" onclick="SuaSach()"><i class="fa-solid fa-pen-to-square action-book"></i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <ul class="pagination justify-content-center">
-        <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-      </ul>
-    </div>
-    <div class="timkiem mb-1" id="themsuasach">
-      <div class="row">
-          <div class="col-sm-4 position-relative">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                  <img class="anhDaiDien" src="/Book image/BupBeRaggedyAnn.jpg" alt="BupBeRaggedyAnn">
+      <div class="col-sm-9">
+        <div id="ql-sach">
+          <div class="timkiem mb-2">
+            <div class="row">
+              <div class="col-sm-3">
+                <a href="#themsuasach" onclick="HienFormThemSachs()" class="nut-them-moi">
+                  <button class="nutbam">Thêm sách mới</button>
+                </a>
               </div>
-              <button class="nutbam position-absolute bottom-0 start-50 translate-middle-x">Chọn ảnh</button>
+              <div class="col-sm-9">
+                <div class="search_box_qlsach row">
+  
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <select class="form-select">
+                        <option>Tên sách</option>
+                        <option>Tên tác giả</option>
+                      </select>
+                      <input class="form-control" type="text" placeholder="Nhập từ khóa tìm kiếm...">
+                      <button class="nutbam">Tìm</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Ảnh bìa</th>
+                  <th scope="col">Tên sách</th>
+                  <th scope="col">Tác giả</th>
+                  <th scope="col">Số lượng</th>
+                  <th scope="col">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td><img src="/Book image/BupBeRaggedyAnn.jpg" alt="BupBeRaggedyAnn" class="img-fluid"></td>
+                  <td>Búp bê Rangged An</td>
+                  <td>Nguyễn Nhật Ánh</td>
+                  <td>100</td>
+                  <td>
+                    <i class="fa-solid fa-trash-can action-book xoa"></i>
+                    <i class="fa-solid fa-pen-to-square action-book"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td><img src="/Book image/ChoDenMauGiaoThiDaMuon.jpg" alt="ChoDenMauGiaoThiDaMuon" class="img-fluid">
+                  </td>
+                  <td>Cho đến mẫu giáo thì đã muônn</td>
+                  <td>Nguyễn Nhật Ánh</td>
+                  <td>100</td>
+                  <td>
+                    <i class="fa-solid fa-trash-can action-book xoa"></i>
+                    <i class="fa-solid fa-pen-to-square action-book"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td><img src="/Book image/ChoToiXinMotVeDiTuoiTho.jpg" alt="ChoToiXinMotVeDiTuoiTho" class="img-fluid">
+                  </td>
+                  <td>Cho tôi xin một vé đi tuổi thơ</td>
+                  <td>Nguyễn Nhật Ánh</td>
+                  <td>100</td>
+                  <td>
+                    <i class="fa-solid fa-trash-can action-book xoa"></i>
+                    <a href="#themsuasach" onclick="SuaSach()"><i class="fa-solid fa-pen-to-square action-book"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="pagination justify-content-center">
+              <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item active"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+            </ul>
           </div>
-          <div class="col-sm-8" id="themsuasach">
-              <div class="row">
+          <div class="timkiem mb-2" id="themsuasach">
+            <div class="row">
+              <div class="col-sm-4 position-relative">
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <img class="anhDaiDien" src="/Book image/BupBeRaggedyAnn.jpg" alt="BupBeRaggedyAnn">
+                </div>
+                <button class="nutbam position-absolute bottom-0 start-50 translate-middle-x">Chọn ảnh</button>
+              </div>
+              <div class="col-sm-8" id="themsuasach">
+                <div class="row">
                   <div class="position-relative mb-3">
-                      <p class="title_themmoi">Thêm sách mới</p>
+                    <p class="title_themmoi">Thêm sách mới</p>
                   </div>
                   <div class="thongtincanhan">
-                      <form>
-                          <div class="row mb-3">
-                              <label class="col-sm-2 col-form-label">Tên sách</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="tensach"
-                                      placeholder="Búp bê Rangged Ann">
-                              </div>
-                          </div>
-                          <div class="row mb-3">
-                              <label class="col-sm-2 col-form-label">Tác giả</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="tacgia"
-                                      placeholder="Nguyễn Nhật Ánh">
-                              </div>
-                          </div>
-                          <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label">Thể loại</label>
-                            <div class="col-sm-10">
-                              <select class="form-select" id="theloai">
-                                <option id="default" disabled selected hidden>Chọn thể loại</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                            </div>
+                    <form>
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Tên sách</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="tensach" placeholder="Búp bê Rangged Ann">
                         </div>
-                          <div class="row mb-3">
-                              <label class="col-sm-2 col-form-label">Số lượng</label>
-                              <div class="col-sm-10">
-                                  <input type="number" class="form-control" id="soluong"
-                                      placeholder="100">
-                              </div>
-                          </div>
-                          <div class="row mb-3">
-                              <label class="col-sm-2 col-form-label">Mô tả</label>
-                              <div class="col-sm-10">
-                                  <textarea type="text" class="form-control" id="mota"
-                                      placeholder="Nhập mô tả"></textarea>
-                              </div>
-                          </div>
-                          <div class="nut-xac-nhan-them-moi">
-                              <button type="button" class="nutbam">Lưu</button>
-                              <button type="button" class="nutbamred">Hủy</button>
-                          </div>
-                      </form>
+                      </div>
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Tác giả</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="tacgia" placeholder="Nguyễn Nhật Ánh">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Thể loại</label>
+                        <div class="col-sm-10">
+                          <select class="form-select" id="theloai">
+                            <option id="default" disabled selected hidden>Chọn thể loại</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Số lượng</label>
+                        <div class="col-sm-10">
+                          <input type="number" class="form-control" id="soluong" placeholder="100">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Mô tả</label>
+                        <div class="col-sm-10">
+                          <textarea type="text" class="form-control" id="mota" placeholder="Nhập mô tả"></textarea>
+                        </div>
+                      </div>
+                      <div class="nut-xac-nhan-them-moi">
+                        <button type="button" class="nutbam">Lưu</button>
+                        <button type="button" class="nutbamred">Hủy</button>
+                      </div>
+                    </form>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
+        <div id="ql-theloai">
+          <div class="timkiem mb-2">
+            <div class="input-group them-moi-the-loai">
+              <a onclick="HienFormSuaTheLoai()" class="nut-them-moi">
+                <button class="nutbam">Thêm thể loại mới</button>
+              </a>
+              <div class="input-group hide-element" id="themtheloai" style="width: 500px;">
+                <input class="form-control" placeholder="Tên thể loại..." style="width: 300px;">
+                <button class="nutbam">Lưu</button>
+              </div>
+            </div>
+  
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Tên thể loại</th>
+                  <th scope="col">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Khoa học</td>
+                  <td>
+                    <i class="fa-solid fa-trash-can action-book xoa"></i>
+                    <a onclick="OpenEditTheLoaiModal()"><i class="fa-solid fa-pen-to-square action-book"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Anh văn</td>
+                  <td>
+                    <i class="fa-solid fa-trash-can action-book xoa"></i>
+                    <a onclick="OpenEditTheLoaiModal()"><i class="fa-solid fa-pen-to-square action-book"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Ngữ văn</td>
+                  <td>
+                    <i class="fa-solid fa-trash-can action-book xoa"></i>
+                    <a onclick="OpenEditTheLoaiModal()"><i class="fa-solid fa-pen-to-square action-book"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-  </div>
+    </div>
+    <div class="modal fade" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chỉnh sửa thể loại</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <labelclass="form-label">Tên thể loại</label>
+              <input type="text" class="form-control" placeholder="Tên thể loại...">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="nutbamred" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="nutbam">Lưu</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- FOOTER -->
   <footer class="footer">
@@ -238,6 +323,7 @@
       <p>@Copyright by Vo Minh Tuan & Vo Xuan Tu</p>
     </div>
   </footer>
+
 </body>
 
 </html>
